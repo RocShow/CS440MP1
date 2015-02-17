@@ -1,3 +1,4 @@
+package Part1;
 import java.util.ArrayList;
 import java.util.Stack;
 
@@ -18,6 +19,7 @@ public class DFS extends Search{
 		State goal = null;
 		while (!frontier.isEmpty()) {
 			State cur = frontier.pop();
+			exploredCount++;
 			if (goalTest(cur)) {
 				goal = cur;
 				break;
@@ -53,7 +55,9 @@ public class DFS extends Search{
 	public static void main(String[] args) {
 		Search dfs = new DFS("bigMaze.txt");
 		ArrayList<State> path = dfs.search();
-		dfs.drawPath(path);
+		dfs.m.drawPath(path);
 		dfs.m.print();
+		System.out.println(dfs.exploredCount);
+		System.out.println(path.get(0).gn);
 	}
 }

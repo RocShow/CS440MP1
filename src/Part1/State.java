@@ -1,3 +1,4 @@
+package Part1;
 import java.util.ArrayList;
 
 public class State {
@@ -9,7 +10,7 @@ public class State {
 		this.row = row;
 		this.col = col;
 		this.parent = parent;
-		gn = parent == null ? 0 : parent.gn() + 1;
+		gn = parent == null ? 1 : parent.gn() + 1;
 	}
 	
 	public int gn(){
